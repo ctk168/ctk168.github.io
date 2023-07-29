@@ -16,10 +16,12 @@
         #bar {
             height: 100vh;
             background: #000;
+            overflow: hidden;
         }
 
         #boxes {
-            position: relative;
+            position: absolute;
+            width: 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -34,7 +36,6 @@
         #box {
             width: 300px;
             height: 300px;
-            position: relative;
             transform-style: preserve-3d;
             animation: mw 20s linear infinite;
 
@@ -91,12 +92,11 @@
         }
 
         #mk {
-            position: absolute;
-            top: 0;
+            position: relative;
             width: 100%;
-            height: 100vh;
+            height: 135vh;
             background-image: url(https://ctk168.github.io/img/shou.jpg);
-            background-size: 100%;
+            background-size: 100% 100%;
             opacity: 0.4;
         }
 
@@ -133,7 +133,7 @@
                 </div>
                 <div id="a4">
                     <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
-                  
+
                     <span>只想与你走完剩下的路</span>
                 </div>
                 <div id="a5">
@@ -146,8 +146,8 @@
                 </div>
             </div>
         </div>
+        <div id="mk"></div>
     </div>
-    <div id="mk"></div>
 </body>
 <script>
     let b = 0
