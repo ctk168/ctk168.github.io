@@ -1,19 +1,158 @@
-~<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ctk</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #bar {
+            height: 100vh;
+            background: #000;
+        }
+
+        #boxes {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hov {
+            transform-style: preserve-3d;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: mw 20s linear infinite;
+
+        }
+
+        #box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        #box div:nth-child(1) {
+            transform: translateZ(150px);
+        }
+
+        #box div:nth-child(2) {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        #box div:nth-child(3) {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        #box div:nth-child(4) {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        #box div:nth-child(5) {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        #box div:nth-child(6) {
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            color: rgb(251, 255, 0);
+            font-weight: bold;
+            white-space: nowrap;
+            font-size: 28px;
+        }
+
+        #mk {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://ctk168.github.io/img/shou.jpg);
+            background-size: 100%;
+            opacity: 0.4;
+        }
+
+        @keyframes mw {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(-360deg);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <button id="btn"> 点一下自增1<h1 id="h"></h1></button>
+    <div id="bar">
+        <!-- 外 -->
+        <div id="boxes">
+            <!-- 内 -->
+            <div id="box">
+
+                <div id="a1">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>迁就你一辈子</span>
+                </div>
+                <div id="a2">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>只挂念你一个</span>
+                </div>
+                <div id="a3">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>一起嗨皮一起快乐</span>
+                </div>
+                <div id="a4">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>只信仰你一人</span>
+                </div>
+                <div id="a5">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>一起闹一起笑</span>
+                </div>
+                <div id="a6">
+                    <img src="https://ctk168.github.io/img/ax2.jpg" alt="">
+                    <span>只想与你走完剩下的路</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mk"></div>
 </body>
 <script>
-    let b =0
-    btn.onclick = function (){
+    let b = 0
+    btn.onclick = function () {
         b++
         h.innerHTML = b
     }
 </script>
+
 </html>
